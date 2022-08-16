@@ -110,6 +110,13 @@ img {
   max-width: 100%;
   height: auto;
 }
+.author-avatar {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
 
 blockquote {
   border-left: 5px solid var(--blockquote-border-color);
@@ -912,6 +919,10 @@ $sidebar-display: "sidebar-display";
 }
 
 #topbar {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-use-select: none;
+  user-select: none;
   i {
     /* icons */
     color: #999;
@@ -973,6 +984,10 @@ $sidebar-display: "sidebar-display";
   padding: 0.18rem 0.3rem;
   color: var(--text-color);
   height: auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-use-select: none;
+  user-select: none;
 
   &:focus {
     box-shadow: none;
