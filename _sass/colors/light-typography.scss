@@ -8,6 +8,7 @@
   --mask-bg: #c1c3c5;
   --main-wrapper-bg: white;
   --main-border-color: #f3f3f3;
+  --scroll-bar-bg: #eeeeee;
 
   /* Common color */
   --text-color: #34343c;
@@ -67,7 +68,11 @@
   --tb-odd-bg: #fbfcfd;
   --tb-border-color: #eaeaea;
   --dash-color: silver;
-  --preview-img-bg: radial-gradient(circle, rgb(255 255 255) 0%, rgb(249 249 249) 100%);
+  --preview-img-bg: radial-gradient(
+    circle,
+    rgb(255 255 255) 0%,
+    rgb(249 249 249) 100%
+  );
   --kbd-wrap-color: #bdbdbd;
   --kbd-text-color: var(--text-color);
   --kbd-bg-color: white;
@@ -81,7 +86,7 @@
   --prompt-danger-bg: rgb(248 215 218 / 56%);
   --prompt-danger-icon-color: #df3c30;
 
-  [class^=prompt-] {
+  [class^="prompt-"] {
     --link-underline-color: rgb(219 216 216);
   }
 
@@ -93,5 +98,4 @@
   --timeline-color: rgba(0, 0, 0, 0.075);
   --timeline-node-bg: #c2c6cc;
   --timeline-year-dot-color: #ffffff;
-
 } /* light-scheme */
