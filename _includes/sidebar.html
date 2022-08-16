@@ -118,8 +118,7 @@
       <i class="{{ entry.icon }}"></i>
     </a>
     {%- elsif entry.type == 'rss' -%}
-    <a href="{{ url }}" aria-label="{{ entry.type }}" {% unless entry.noblank %}target="_blank" rel="noopener" {%
-      endunless %}">
+    <a href="{{ url }}" aria-label="{{ entry.type }}">
       <i class="{{ entry.icon }}"></i>
     </a>
     {%- endif -%}
