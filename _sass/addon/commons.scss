@@ -36,6 +36,10 @@ body {
   font-family: 'Source Sans Pro', 'Microsoft Yahei', sans-serif;
 }
 
+*::selection {
+  background: rgba(45, 170, 219, 0.3);
+}
+
 /* --- Typography --- */
 
 h1 {
@@ -495,7 +499,6 @@ img[data-src] {
 
   > ol,
   > ul {
-    padding-left: 2rem;
 
     li {
       ol,
@@ -890,7 +893,7 @@ $sidebar-display: "sidebar-display";
   right: 0;
   transition: top 0.2s ease-in-out;
   z-index: 50;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  border-bottom: 1px solid var(--hr-color);
   background-color: var(--topbar-wrapper-bg);
 
   [data-topbar-visible=false] & {

@@ -7,16 +7,16 @@
     <div id="avatar">
       <a href="{{ '/' | relative_url }}" class="mx-auto">
         {% if site.avatar != empty and site.avatar %}
-          {% capture avatar_url %}
-            {% if site.avatar contains '://' %}
-              {{ site.avatar }}
-            {% elsif site.img_cdn != empty and site.img_cdn %}
-              {{ site.avatar | prepend: site.img_cdn }}
-            {% else %}
-              {{ site.avatar | relative_url }}
-            {% endif %}
-          {% endcapture %}
-          <img src="{{ avatar_url | strip }}" alt="avatar" onerror="this.style.display='none'">
+        {% capture avatar_url %}
+        {% if site.avatar contains '://' %}
+        {{ site.avatar }}
+        {% elsif site.img_cdn != empty and site.img_cdn %}
+        {{ site.avatar | prepend: site.img_cdn }}
+        {% else %}
+        {{ site.avatar | relative_url }}
+        {% endif %}
+        {% endcapture %}
+        <img src="{{ avatar_url | strip }}" alt="avatar" onerror="this.style.display='none'">
         {% endif %}
       </a>
     </div>
@@ -29,7 +29,6 @@
   </div><!-- .profile-wrapper -->
 
   <ul class="w-100">
-
     <!-- home -->
     <li class="nav-item{% if page.layout == 'home' %}{{ " active" }}{% endif %}">
       <a href="{{ '/' | relative_url }}" class="nav-link">
@@ -39,6 +38,33 @@
     </li>
     <!-- the real tabs -->
     {% for tab in site.tabs %}
+    {% if tab.url == "/posts/" %}
+    <li class="nav-item{% if page.layout=='page' %}{{ " active" }}{% endif %}">
+      <a href="{{ '/allposts/' | relative_url }}" class="nav-link">
+        <i class="fa-fw {{ tab.icon }} ml-xl-3 mr-xl-3 unloaded"></i>
+
+        <span>{{ site.data.locales[lang].tabs.posts | default: tab.title | upcase }}</span>
+      </a>
+    </li>
+    {% elsif tab.url == "/categories/" %}
+    <li class="nav-item{% if tab.url == page.url or page.layout == 'category' %}{{ " active" }}{% endif %}">
+      <a href="{{ tab.url | relative_url }}" class="nav-link">
+        <i class="fa-fw {{ tab.icon }} ml-xl-3 mr-xl-3 unloaded"></i>
+        {% capture tab_name %}{{ tab.url | split: '/' }}{% endcapture %}
+
+        <span>{{ site.data.locales[lang].tabs.[tab_name] | default: tab.title | upcase }}</span>
+      </a>
+    </li>
+    {% elsif tab.url == "/tags/" %}
+    <li class="nav-item{% if tab.url == page.url or page.layout == 'tag' %}{{ " active" }}{% endif %}">
+      <a href="{{ tab.url | relative_url }}" class="nav-link">
+        <i class="fa-fw {{ tab.icon }} ml-xl-3 mr-xl-3 unloaded"></i>
+        {% capture tab_name %}{{ tab.url | split: '/' }}{% endcapture %}
+
+        <span>{{ site.data.locales[lang].tabs.[tab_name] | default: tab.title | upcase }}</span>
+      </a>
+    </li>
+    {%else%}
     <li class="nav-item{% if tab.url == page.url %}{{ " active" }}{% endif %}">
       <a href="{{ tab.url | relative_url }}" class="nav-link">
         <i class="fa-fw {{ tab.icon }} ml-xl-3 mr-xl-3 unloaded"></i>
@@ -47,6 +73,7 @@
         <span>{{ site.data.locales[lang].tabs.[tab_name] | default: tab.title | upcase }}</span>
       </a>
     </li> <!-- .nav-item -->
+    {%endif%}
     {% endfor %}
 
   </ul> <!-- ul.nav.flex-column -->
@@ -54,37 +81,50 @@
   <div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center">
 
     {% unless site.theme_mode %}
-      <button class="mode-toggle btn" aria-label="Switch Mode">
-        <i class="fas fa-adjust"></i>
-      </button>
+    <button class="mode-toggle btn" aria-label="Switch Mode">
+      <i class="fas fa-adjust"></i>
+    </button>
 
-      {% if site.data.contact.size > 0 %}
-        <span class="icon-border"></span>
-      {% endif %}
+    {% if site.data.contact.size > 0 %}
+    <span class="icon-border"></span>
+    {% endif %}
     {% endunless %}
 
     {% for entry in site.data.contact %}
-      {% capture url %}
-        {%- if entry.type == 'github' -%}
-          https://github.com/{{ site.github.username }}
-        {%- elsif entry.type == 'twitter' -%}
-          https://twitter.com/{{ site.twitter.username }}
-        {%- elsif entry.type == 'email' -%}
-          {% assign email = site.social.email | split: '@' %}
-          javascript:location.href = 'mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@')
-        {%- elsif entry.type == 'rss' -%}
-          {{ "/feed.xml" | relative_url }}
-        {%- else -%}
-          {{ entry.url }}
-        {%- endif -%}
-      {% endcapture %}
+    {% capture url %}
+    {%- if entry.type == 'github' -%}
+    https://github.com/{{ site.github.username }}
+    {%- elsif entry.type == 'twitter' -%}
+    https://twitter.com/{{ site.twitter.username }}
+    {%- elsif entry.type == 'email' -%}
+    {% assign email = site.social.email | split: '@' %}
+    javascript:location.href = 'mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@')
+    {%- elsif entry.type == 'rss' -%}
+    {{ "/feed.xml" | relative_url }}
+    {%- else -%}
+    {{ entry.url }}
+    {%- endif -%}
+    {% endcapture %}
 
-      {% if url %}
-      <a href="{{ url }}" aria-label="{{ entry.type }}"
-        {% unless entry.noblank %}target="_blank" rel="noopener"{% endunless %}>
-        <i class="{{ entry.icon }}"></i>
-      </a>
-      {% endif %}
+    {% if url %}
+    {%- if entry.type == 'github' -%}
+    <a href="{{ url }}" aria-label="{{ entry.type }}" {% unless entry.noblank %}target="_blank" rel="noopener" {%
+      endunless %} data-toggle="tooltip" data-placement="top" title="{{ site.github.username }}">
+      <i class="{{ entry.icon }}"></i>
+    </a>
+    {%- elsif entry.type == 'email' -%}
+    <a href="{{ url }}" aria-label="{{ entry.type }}" {% unless entry.noblank %}target="_blank" rel="noopener" {%
+      endunless %} data-toggle="tooltip" data-placement="top" title="{{ site.social.email }}">
+      <i class="{{ entry.icon }}"></i>
+    </a>
+    {%- elsif entry.type == 'rss' -%}
+    <a href="{{ url }}" aria-label="{{ entry.type }}" {% unless entry.noblank %}target="_blank" rel="noopener" {%
+      endunless %}">
+      <i class="{{ entry.icon }}"></i>
+    </a>
+    {%- endif -%}
+
+    {% endif %}
 
     {% endfor %}
 

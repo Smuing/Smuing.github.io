@@ -23,10 +23,10 @@ timezone: Asia/Seoul
 
 title: 개발새발 블로그 # the main title
 
-tagline: 개발새발 # it will display as the sub-title
+tagline: 개발새발 🐾 # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  개발
+  개발 블로그
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: "https://smuing.github.io"
@@ -34,18 +34,16 @@ url: "https://smuing.github.io"
 github:
   username: Smuing # change to your github username
 
-twitter:
-  username: twitter_username # change to your twitter username
-
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: smuing
+  name: Smuing
+  bio: 탁.타닥.탁.코.코.코딩.시.시발럼아.타탁.탁.타타탁.탁.퍽.코딩.시.발럼아.탁.탁탁.타다닥.탁.코.딩시.발럼아.
   email: smuing0924@gmail.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username # change to your twitter homepage
     - https://github.com/Smuing # change to your github homepage
+    # - https://twitter.com/username # change to your twitter homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
@@ -83,7 +81,7 @@ theme_mode: # [light|dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: assets/img/avatar.png
 
 # boolean type, the global switch for ToC in posts.
 toc: true
@@ -118,7 +116,10 @@ assets:
 pwa:
   enabled: true # the option for PWA feature
 
-paginate: 10
+plugins: 
+ - jekyll-paginate
+paginate: 5
+paginate_path: "/allposts/:num/"
 
 # ------------ The following options are not recommended to be modified ------------------
 

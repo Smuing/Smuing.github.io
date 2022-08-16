@@ -152,6 +152,10 @@ img.preview-img {
   &.nav-link:not(.active) {
     color: inherit;
   }
+  &.nav-link.active {
+    color: rgba(46, 170, 220, 0.8);
+    border-left: 2px solid rgba(46, 170, 219, 0.4);
+  }
 
 }
 
