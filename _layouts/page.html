@@ -64,7 +64,8 @@ layout: default
       {% if page.layout == 'page' or page.collection == 'tabs'%}
       {% assign title = site.data.locales[lang].tabs[tab_key] | default: page.title %}
       <h1 class="dynamic-title">
-        {{ title }}
+        {{ title }} {%if title == 'Posts'%}📖{%elsif title == 'Categories' %}📁{%elsif title == 'Tags' %}🏷️{%elsif
+        title == 'Archives' %}💾{%endif%}
       </h1>
       <div class="post-content">
         {{ _content }}
@@ -81,6 +82,7 @@ layout: default
 
     <div class="access">
       {% if page.layout != 'post' %}
+      <!-- {% include update-list.html %} -->
       {% include trending-tags.html %}
       {% endif %}
     </div>

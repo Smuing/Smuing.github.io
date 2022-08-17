@@ -104,6 +104,7 @@ ul {
 
 a {
   @extend %link-color;
+  transition: 0.3s;
 }
 
 img {
@@ -285,17 +286,17 @@ img[data-src] {
     display: inline-block;
     line-height: 1rem;
     font-size: 0.85rem;
-    background: none;
+    background: #ffffff00;
     border: 1px solid var(--btn-border-color);
     border-radius: 0.8rem;
     padding: 0.3rem 0.5rem;
     margin: 0 0.35rem 0.5rem 0;
+    transition: 0.3s;
 
     &:hover {
-      background-color: #2a408e;
-      border-color: #2a408e;
+      background-color: var(--link-color);
+      border-color: var(--link-color);
       color: #fff;
-      transition: none;
     }
   }
 

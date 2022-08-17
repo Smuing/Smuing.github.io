@@ -116,8 +116,8 @@ assets:
 pwa:
   enabled: true # the option for PWA feature
 
-plugins: 
- - jekyll-paginate
+plugins:
+  - jekyll-paginate
 paginate: 5
 paginate_path: "/allposts/:num/"
 
