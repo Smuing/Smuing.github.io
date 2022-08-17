@@ -115,7 +115,6 @@ img {
   -khtml-user-drag: none;
   -moz-user-drag: none;
   -o-user-drag: none;
-  user-drag: none;
 }
 
 blockquote {
@@ -973,6 +972,7 @@ $sidebar-display: "sidebar-display";
   color: var(--link-color);
   margin-left: 1rem;
   display: none;
+  white-space: nowrap;
 
   @extend %cursor-pointer;
 }
@@ -984,10 +984,6 @@ $sidebar-display: "sidebar-display";
   padding: 0.18rem 0.3rem;
   color: var(--text-color);
   height: auto;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-use-select: none;
-  user-select: none;
 
   &:focus {
     box-shadow: none;

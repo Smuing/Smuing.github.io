@@ -1,5 +1,5 @@
 #post-list {
-  min-height: 707px;
+  min-height: 854px;
   margin-top: 1rem;
   padding-right: 0.5rem;
 
@@ -58,15 +58,12 @@
         display: none;
       }
     }
-
   } // .post-preview
 } // #post-list
 
-
-
 .pagination {
   color: var(--btn-patinator-text-color);
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 
   a:hover {
     text-decoration: none;
@@ -112,7 +109,6 @@
       border-radius: 50%;
     }
   } // .page-item
-
 } // .pagination
 
 /* Hide SideBar and TOC */
@@ -124,61 +120,55 @@
       &:not(:first-child):not(:last-child) {
         display: none;
       }
-
     }
-
   }
 }
 
 /* Sidebar is visible */
 @media all and (min-width: 831px) {
-    #post-list {
-      margin-top: 1.5rem;
-  
-      .post-preview .post-meta {
-        .pin {
-          background: var(--pin-bg);
-          border-radius: 5px;
-          line-height: 1.4rem;
-          height: 1.3rem;
-          margin-top: 3px;
-          padding-left: 1px;
-          padding-right: 6px;
-  
-          > span {
-            display: inline;
-          }
+  #post-list {
+    margin-top: 1.5rem;
+
+    .post-preview .post-meta {
+      .pin {
+        background: var(--pin-bg);
+        border-radius: 5px;
+        line-height: 1.4rem;
+        height: 1.3rem;
+        margin-top: 3px;
+        padding-left: 1px;
+        padding-right: 6px;
+
+        > span {
+          display: inline;
         }
       }
     }
-  
-    .pagination {
-      font-size: 0.85rem;
-  
-      .page-item {
-        &:not(:last-child) {
-          margin-right: 0.7rem;
-        }
-  
-        .page-link {
-          width: 2rem;
-          height: 2rem;
-        }
-  
-      }
-  
-      .page-index {
-        display: none;
-      }
-  
-    } // .pagination
-  
   }
-  
+
+  .pagination {
+    font-size: 0.85rem;
+
+    .page-item {
+      &:not(:last-child) {
+        margin-right: 0.7rem;
+      }
+
+      .page-link {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+
+    .page-index {
+      display: none;
+    }
+  } // .pagination
+}
+
 /* Pannel hidden */
 @media all and (max-width: 1200px) {
-    #post-list {
-      padding-right: 0;
-    }
+  #post-list {
+    padding-right: 0;
   }
-  
+}
