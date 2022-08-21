@@ -8,8 +8,8 @@ swcache: true
   {
     "title": {{ post.title | jsonify }},
     "url": {{ post.url | relative_url | jsonify }},
-    "categories": {{ post.categories | join: ', ' | jsonify }},
-    "tags": {{ post.tags | join: ', ' | jsonify }},
+    "categories": {{ post.categories | join: ', ' | jsonify | url_decode }},
+    "tags": {{ post.tags | join: ', ' | jsonify | url_decode }},
     "date": "{{ post.date }}",
     {% include no-linenos.html content=post.content %}
     "snippet": {{ content | strip_html | strip_newlines | jsonify }}

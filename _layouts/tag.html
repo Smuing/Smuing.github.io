@@ -7,7 +7,7 @@ layout: page
 
 <div id="page-tag">
   <h1 class="pl-lg-2">
-    {{ page.title }} 🏷️
+    {{ page.title | url_decode }} 🏷️
     <span class="lead text-muted pl-2">{{ page.posts | size }}</span>
   </h1>
   <ul class="post-content pl-0">

@@ -26,5 +26,5 @@
   {%- assign _prompt_words = read_prompt | number_of_words: 'auto' -%}
   {%- unless _prompt_words > 1 -%}{{ " " }}{%- endunless -%}{{ read_prompt }}
   {%- endif -%}
-  <em>&nbsp;&nbsp;{{- read_time -}}{{- site.data.locales[lang].post.read_time.unit -}}</em>
+  <em>&nbsp;{{- read_time -}}{{- site.data.locales[lang].post.read_time.unit -}}</em>
 </span>

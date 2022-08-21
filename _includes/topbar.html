@@ -31,7 +31,7 @@
       {%if page.title == 'Posts'%}
       <span>{{ site.data.locales[lang].tabs['posts'] | default: page.title }}</span>
       {% else %}
-      <span>{{ page.title }}</span>
+      <span>{{ page.title | url_decode }}</span>
       {% endif %}
       {% endif %}
 

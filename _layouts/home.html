@@ -69,8 +69,8 @@ layout: page
         <i class="far fa-folder-open fa-fw"></i>
         <span>
           {% for category in post.categories %}
-          {{ category }}
-          {%- unless forloop.last -%},{%- endunless -%}
+          {{ category | url_decode }}
+          {%- unless forloop.last -%}＞{%- endunless -%}
           {% endfor %}
         </span>
         {% endif %}

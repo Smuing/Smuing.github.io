@@ -429,6 +429,12 @@ img[data-src] {
     margin-bottom: 1.5rem;
   }
 
+  .img-p {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
   a {
     &.img-link {
       @extend %no-cursor;
@@ -1375,6 +1381,10 @@ $sidebar-display: "sidebar-display";
     ~ .post-content {
       margin-top: 3rem;
     }
+  }
+
+  .img-p {
+    flex-direction: column;
   }
 } /* max-width: 849px */
 

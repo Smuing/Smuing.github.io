@@ -50,7 +50,7 @@
 
   <title>
   {%- unless page.layout == "home" -%}
-    {{ page.title | append: " | "}}
+    {{ page.title | url_decode | append: " | "}}
   {%- endunless -%}
     {{ site.title }}
   </title>
