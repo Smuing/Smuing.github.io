@@ -15,6 +15,7 @@ tabs:
   categories: Categories
   tags: Tags
   archives: Archives
+  miscellaneous: Miscellaneous
   about: About
 
 # the text displayed in the search bar & search results
@@ -53,6 +54,7 @@ notification:
 # ----- Posts related labels -----
 
 post:
+  recent_posts: Recent Posts
   written_by: By
   posted: Posted
   updated: Updated

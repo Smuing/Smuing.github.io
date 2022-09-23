@@ -1718,3 +1718,29 @@ $sidebar-display: "sidebar-display";
     } /* .sidebar-bottom */
   } /* #sidebar */
 } /* min-width: 1650px */
+
+@media (min-width: 850px) {
+  #miscellaneousTable {
+    width: auto;
+    min-width: auto;
+  }
+}
+#miscellaneousTable {
+  overflow: hidden;
+  & thead {
+    cursor: pointer;
+  }
+}
+#miscellaneousLink {
+  height: 0px;
+  position: relative;
+  transition: 0.3s;
+  &.on {
+    height: 43px;
+  }
+
+  & tr {
+    width: 100%;
+    position: absolute;
+  }
+}

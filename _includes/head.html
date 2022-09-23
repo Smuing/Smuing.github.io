@@ -50,7 +50,13 @@
 
   <title>
   {%- unless page.layout == "home" -%}
-    {{ page.title | url_decode | append: " | "}}
+	{% if page.layout == 'page' or page.collection == 'tabs'%}
+      		{% assign tab_key = page.title | downcase %}
+      		{% assign title = site.data.locales[lang].tabs[tab_key] | default: page.title %}
+		{{ title | url_decode | append: " | "}}
+	{% else %}
+    		{{ page.title | url_decode | append: " | "}}
+	{% endif %}
   {%- endunless -%}
     {{ site.title }}
   </title>

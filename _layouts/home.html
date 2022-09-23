@@ -50,7 +50,9 @@ layout: page
   </div>
 </div>
 
-<h3 class="pt-4" aria-label="Recent Posts">Recent Posts</h3>
+<h3 class="pt-4" aria-label="Recent Posts">
+  {{site.data.locales[lang].post['recent_posts'] | default: 'Recent Posts'}}
+</h3>
 <div id="recent-post-list" class="recent">
   {%- for post in site.posts limit: 5 -%}
   <div class="post-preview">

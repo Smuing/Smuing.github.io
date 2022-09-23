@@ -15,6 +15,7 @@ tabs:
   categories: 카테고리
   tags: 태그
   archives: 아카이브
+  miscellaneous: 잡학사전
   about: 정보
 
 # the text displayed in the search bar & search results
@@ -53,6 +54,7 @@ notification:
 # ----- Posts related labels -----
 
 post:
+  recent_posts: 최근 글
   written_by: By
   posted: 게시
   updated: 업데이트

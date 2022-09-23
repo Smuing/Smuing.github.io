@@ -62,12 +62,32 @@ layout: default
       {% endcapture %}
 
       {% if page.layout == 'page' or page.collection == 'tabs'%}
+      {% assign tab_key = page.title | downcase %}
       {% assign title = site.data.locales[lang].tabs[tab_key] | default: page.title %}
       <h1 class="dynamic-title">
-        {{ title }} {%if title == 'Posts'%}📖{%elsif title == 'Categories' %}📁{%elsif title == 'Tags' %}🏷️{%elsif
-        title == 'Archives' %}💾{%endif%}
+        {{ title }} {%if tab_key == 'posts'%}📖{%elsif tab_key == 'categories' %}📁{%elsif tab_key == 'tags'
+        %}🏷️{%elsif
+        tab_key == 'archives' %}💾{%elsif
+        tab_key == 'miscellaneous' %}📓{%endif%}
       </h1>
       <div class="post-content">
+        {% if page.url == "/miscellaneous/" %}
+        <hr>
+        <div class="table-wrapper">
+          <table id="miscellaneousTable">
+            <thead>
+              <tr>
+                <th onclick='document.getElementById("miscellaneousLink").classList.toggle("on");'>바로가기🚀</th>
+              </tr>
+            </thead>
+            <tbody id="miscellaneousLink">
+              <tr>
+                <td><a href="#react">React</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        {%endif%}
         {{ _content }}
       </div>
       {% else %}
