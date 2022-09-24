@@ -71,23 +71,6 @@ layout: default
         tab_key == 'miscellaneous' %}📓{%endif%}
       </h1>
       <div class="post-content">
-        {% if page.url == "/miscellaneous/" %}
-        <hr>
-        <div class="table-wrapper">
-          <table id="miscellaneousTable">
-            <thead>
-              <tr>
-                <th onclick='document.getElementById("miscellaneousLink").classList.toggle("on");'>바로가기🚀</th>
-              </tr>
-            </thead>
-            <tbody id="miscellaneousLink">
-              <tr>
-                <td><a href="#react">React</a></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        {%endif%}
         {{ _content }}
       </div>
       {% else %}
