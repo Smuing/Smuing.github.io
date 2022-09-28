@@ -72,17 +72,19 @@ layout: default
       </h1>
       <div class="post-content">
         {% if page.url == "/miscellaneous/" %}
-        <hr>
-        <div class="table-wrapper">
+        <div class="table-wrapper" id="miscellaneous-table-div">
           <table id="miscellaneousTable">
             <thead>
               <tr>
-                <th onclick='document.getElementById("miscellaneousLink").classList.toggle("on");'>바로가기🚀</th>
+                <th onclick='document.getElementById("miscellaneous-table-div").classList.toggle("on");'>바로가기🚀</th>
               </tr>
             </thead>
             <tbody id="miscellaneousLink">
               <tr>
                 <td><a href="#react">React</a></td>
+              </tr>
+              <tr>
+                <td><a href="#design">Design</a></td>
               </tr>
             </tbody>
           </table>

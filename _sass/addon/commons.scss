@@ -1725,22 +1725,17 @@ $sidebar-display: "sidebar-display";
     min-width: auto;
   }
 }
-#miscellaneousTable {
+#miscellaneous-table-div {
+  height: 43px;
   overflow: hidden;
-  & thead {
-    cursor: pointer;
+  transition: 0.3s;
+
+  &.on {
+    height: 126.87px;
   }
 }
-#miscellaneousLink {
-  height: 0px;
-  position: relative;
-  transition: 0.3s;
-  &.on {
-    height: 43px;
-  }
-
-  & tr {
-    width: 100%;
-    position: absolute;
+#miscellaneousTable {
+  & thead {
+    cursor: pointer;
   }
 }
