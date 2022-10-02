@@ -1719,10 +1719,25 @@ $sidebar-display: "sidebar-display";
   } /* #sidebar */
 } /* min-width: 1650px */
 
+#miscellaneous {
+  h5 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+}
 @media (min-width: 850px) {
   #miscellaneousTable {
     width: auto;
     min-width: auto;
+  }
+}
+@media (max-width: 1200px) {
+  #miscellaneous-table-div {
+    height: 45px !important;
+
+    &.on {
+      height: 379.25px !important;
+    }
   }
 }
 #miscellaneous-table-div {
@@ -1731,11 +1746,14 @@ $sidebar-display: "sidebar-display";
   transition: 0.3s;
 
   &.on {
-    height: 168.82px;
+    height: 365.41px;
   }
 }
 #miscellaneousTable {
   & thead {
     cursor: pointer;
+  }
+  & li {
+    color: var(--blockquote-text-color);
   }
 }
