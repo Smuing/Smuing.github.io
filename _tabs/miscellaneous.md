@@ -19,22 +19,21 @@ order: 4
 > - ##### Actions
 >   - [Secrets을 통해 env 파일 생성](https://ji5485.github.io/post/2021-06-26/create-env-with-github-actions-secrets/){:target="blank"}
 
+## Design
+
+---
+
+> - [디자인 나침반](https://designcompass.org/){:target="blank"}
+> - [드리블 (Dribbble)](https://dribbble.com/){:target="blank"}
+
 ## Column
 
 ---
 
 > - ##### IT
 >   - [요즘IT](https://yozm.wishket.com/magazine/){:target="blank"}
-> - ##### Design
->   - [디자인 나침반](https://designcompass.org/){:target="blank"}
 > - ##### Football
 >   - [EPL EDIT (해외축구 칼럼 번역)](https://epledit.tistory.com/){:target="blank"}
-
-## Design
-
----
-
-> - [드리블 (Dribbble)](https://dribbble.com/){:target="blank"}
 
 ## Idea
 
