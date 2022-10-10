@@ -56,9 +56,13 @@
       {{- site.data.locales[lang].title | default: site.title -}}
       {% elsif page.collection == 'tabs' or page.layout == 'page' %}
       {%- capture tab_key -%}{{ page.url | split: '/' }}{%- endcapture -%}
-      {{- site.data.locales[lang].tabs[tab_key] | default: page.title -}}
+      {% if tab_key == 'allposts' %}
+      {{- site.data.locales[lang].tabs['posts'] | default: page.title -}}
       {% else %}
-      {{- site.data.locales[lang].layout[page.layout] | default: page.layout | capitalize -}}
+      {{- site.data.locales[lang].tabs[tab_key] | default: page.title -}}
+      {% endif %}
+      {% else %}
+      <!-- {{- site.data.locales[lang].layout[page.layout] | default: page.layout | capitalize -}} -->
       {% endif %}
     </div>
 
