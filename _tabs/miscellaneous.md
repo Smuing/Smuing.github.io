@@ -4,6 +4,12 @@ icon: fas fa-book-skull
 order: 4
 ---
 
+## JavaScript
+
+---
+
+> - [Cannot read Properties of Undefined](https://bobbyhadz.com/blog/javascript-cannot-read-property-of-undefined){:target="blank"}
+
 ## React
 
 ---
