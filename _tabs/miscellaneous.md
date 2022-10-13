@@ -46,4 +46,5 @@ order: 4
 ---
 
 > - [IdeasWatch (아이디어 공유 사이트)](https://ideaswatch.com/){:target="blank"}
+> - [IdeasAI](https://ideasai.com/){:target="blank"}
 > - [DevFoliOh (개발자 토이프로젝트)](https://devfolio.kr/){:target="blank"}
