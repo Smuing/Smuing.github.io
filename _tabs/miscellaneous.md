@@ -38,6 +38,10 @@ order: 4
 
 > - ##### IT
 >   - [요즘IT](https://yozm.wishket.com/magazine/){:target="blank"}
+> - ##### Planning
+>   - [팁스터](https://maily.so/tipster){:target="blank"}
+> - ##### Marketing
+>   - [오픈애즈](https://www.openads.co.kr/){:target="blank"}
 > - ##### Football
 >   - [EPL EDIT (해외축구 칼럼 번역)](https://epledit.tistory.com/){:target="blank"}
 
