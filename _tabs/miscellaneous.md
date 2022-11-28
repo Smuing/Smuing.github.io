@@ -31,6 +31,8 @@ order: 4
 
 > - [디자인 나침반](https://designcompass.org/){:target="blank"}
 > - [드리블 (Dribbble)](https://dribbble.com/){:target="blank"}
+> - [디자인베이스](https://designbase.co.kr/){:target="blank"}
+>   - [디자인 용어사전](https://designbase.co.kr/dictionary/){:target="blank"}
 
 ## Column
 
